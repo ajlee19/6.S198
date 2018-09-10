@@ -137,10 +137,12 @@
             <p>Image above verifies that only 10 samples are collected for the first class, and only 100 samples are collected for the second class as specified in the code.</p>
             <p>We noticed that when there is a large discrepancy in number of maximum samples for each classes, confidence level for the classes are slightly affected as well. We suspect that this happens because number of top matches, which correlates with the probability and confidence level of the classes, significantly decreases if the number of total samples available decreases. </p>
             <h5 class="post-subtitle">
-              Section 7
+              Section 7 Further Explorations
             </h5>
-            <img class="img" src="pset0/ps0sec4.png" width="100%">
-            <p>Changed width of the webcam to be '100%'.</p>
+            <p>For this section, we decreased the number of classes from 3 to 2. The image below shows the code modification for the change.</p>
+            <img class="img" src="pset1/count.png" width="100%">
+            <p>With such change, now the confidence level of each classes are modified. In the popup alert, the confidence levels are calculated for only the first two classes as shown below.</p>
+            <img class="img" src="pset1/classdeleted2.png" width="100%">
             <!-- </div> -->
             <p class="post-meta">Posted
               <!-- <a href="#">Start Bootstrap</a> -->
