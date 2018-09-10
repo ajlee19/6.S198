@@ -120,7 +120,10 @@
           <img class="img" src="pset1/6140.png" width="100%">
           <p>In both examples above, not only the class with 0 match, but also the class with number of matches less than
             the max matches have probablity of 0.
-
+            For example, in the top image, the first class has 5 matches, the second has 0, and the third has 15. In this case, the max matches is 15, and both 5 and 0 are less than 7.5, which is the half of max matches. Therefore the class with 15 matches has probability of 1, and the other two classes have probability of 0.
+            <img class="img" src="pset1/modified_half_half.png" width="100%">
+            <img class="img" src="pset1/035065.png" width="100%">
+            <p>In the above 2 examples, there are two classes that are being counted. For example in the bottom image, the max matches is 13 and the first class, whose number of matches is 7, also should be factored in, since its number of matches is greater than the half of max matches (6.5). Therefore the probabilities of the two qualifying classes are proportionally divided.</p>
             <!-- </a> -->
             <h5 class="post-subtitle">
               Section 6
