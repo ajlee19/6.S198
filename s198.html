@@ -126,14 +126,16 @@
             <p>In the above 2 examples, there are two classes that are being counted. For example in the bottom image, the max matches is 13 and the first class, whose number of matches is 7, also should be factored in, since its number of matches is greater than the half of max matches (6.5). Therefore the probabilities of the two qualifying classes are proportionally divided.</p>
             <!-- </a> -->
             <h5 class="post-subtitle">
-              Section 6
+              Section 6 Limiting the number of training examples per class
             </h5>
-            <!-- <img class="img" src="pset1/5015.png" width="100%">
-            <img class="img" src="pset1/6140.png" width="100%">
-            <p>In both examples above, not only the class with 0 match, but also the class with number of matches les than
-              the max matches have probablity of 0.
-
-            </p> -->
+            <img class="img" src="pset1/animate.png" width="100%">
+            <p>Image above demonstrates the code modified for Section 6. As shown in the image, allocated number of samples are 10 for the first class, 100 for the second class, and 200 for the third class.
+            </p>
+            <img class="img" src="pset1/alert.png" width="100%">
+            <p>As shown in the image, an alert pops up when maximum number of samples are collected.</p>
+            <img class="img" src="pset1/capped.png" width="100%">
+            <p>Image above verifies that only 10 samples are collected for the first class, and only 100 samples are collected for the second class as specified in the code.</p>
+            <p>We noticed that when there is a large discrepancy in number of maximum samples for each classes, confidence level for the classes are slightly affected as well. We suspect that this happens because number of top matches, which correlates with the probability and confidence level of the classes, significantly decreases if the number of total samples available decreases. </p>
             <h5 class="post-subtitle">
               Section 7
             </h5>
