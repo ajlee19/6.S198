@@ -69,21 +69,21 @@
       <div class="col-lg-8 col-md-10 mx-auto">
         <div class="post-preview">
           <!-- <div> -->
-            <!-- <a href="post.html"> -->
-            <h2 class="post-title">
-              Assignment 0
-            </h2>
-            <h5 class="post-subtitle">
-              Section 4
-            </h5>
-            <img class="img" src="pset0/ps0sec4.png" width="100%">
-            <p>Changed width of the webcam to be '100%'.</p>
+          <!-- <a href="post.html"> -->
+          <h2 class="post-title">
+            Assignment 0
+          </h2>
+          <h5 class="post-subtitle">
+            Section 4
+          </h5>
+          <img class="img" src="pset0/ps0sec4.png" width="100%">
+          <p>Changed width of the webcam to be '100%'.</p>
 
-            <h5 class="post-subtitle">
-              Section 5
-            </h5>
-            <a href="pset0/index.html">tinyCodeExample.html</a>
-            <!-- </a> -->
+          <h5 class="post-subtitle">
+            Section 5
+          </h5>
+          <a href="pset0/index.html">tinyCodeExample.html</a>
+          <!-- </a> -->
           <!-- </div> -->
           <p class="post-meta">Posted
             <!-- <a href="#">Start Bootstrap</a> -->
@@ -91,6 +91,57 @@
           </p>
         </div>
         <hr>
+        <div class="post-preview">
+          <!-- <div> -->
+          <!-- <a href="post.html"> -->
+          <h2 class="post-title">
+            Assignment 1
+          </h2>
+          <h5 class="post-subtitle">
+            Section 4 Examining the confidence levels
+          </h5>
+          <img class="img" src="pset1/0200.png" width="100%">
+          <p>As shown in the image above, the alert on the top of the page displays number of images matched and confidence
+            levels for each class.</p>
+          <p>Note that because my face (one on the left) is only slightly shown, my friend's face (the one on the right)
+            has confidence level of 1 because she has top 20 closest matches.</p>
+
+          <h5 class="post-subtitle">
+            Section 5 Scaling the confidence values
+          </h5>
+          <img class="img" src="pset1/code.png" width="100%">
+          <p>Shown above is the code modification made to WebcamClassifier.js</p>
+          <p>Unlike the original code, the modified code now first finds a class with the most matches (let's call this number
+            of matches "max matches"). Then in the following iterations, we calculate the probabilities of each classes.
+            If the number of matches is less than half of max matches calculated 0, we assume the probability for the given
+            class is 0. Otherwise, the probability of the class is caculated as #matches / totalSamples. totalSamples equals
+            to the sum of number of matches of all classes, whose probability is greater than 0.</p>
+          <img class="img" src="pset1/5015.png" width="100%">
+          <img class="img" src="pset1/6140.png" width="100%">
+          <p>In both examples above, not only the class with 0 match, but also the class with number of matches less than
+            the max matches have probablity of 0.
+
+            <!-- </a> -->
+            <h5 class="post-subtitle">
+              Section 6
+            </h5>
+            <!-- <img class="img" src="pset1/5015.png" width="100%">
+            <img class="img" src="pset1/6140.png" width="100%">
+            <p>In both examples above, not only the class with 0 match, but also the class with number of matches les than
+              the max matches have probablity of 0.
+
+            </p> -->
+            <h5 class="post-subtitle">
+              Section 7
+            </h5>
+            <img class="img" src="pset0/ps0sec4.png" width="100%">
+            <p>Changed width of the webcam to be '100%'.</p>
+            <!-- </div> -->
+            <p class="post-meta">Posted
+              <!-- <a href="#">Start Bootstrap</a> -->
+              on September 10, 2018
+            </p>
+        </div>
         <!-- <div class="post-preview">
             <a href="post.html">
               <h2 class="post-title">
