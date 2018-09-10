@@ -112,18 +112,20 @@
           <img class="img" src="pset1/code.png" width="100%">
           <p>Shown above is the code modification made to WebcamClassifier.js</p>
           <p>Unlike the original code, the modified code now first finds a class with the most matches (let's call this number
-            of matches "max matches"). Then in the following iterations, we calculate the probabilities of each classes.
-            If the number of matches is less than half of max matches calculated 0, we assume the probability for the given
-            class is 0. Otherwise, the probability of the class is caculated as #matches / totalSamples. totalSamples equals
-            to the sum of number of matches of all classes, whose probability is greater than 0.</p>
+            of matches "Max Match"). 
+            Then in the following iterations, we calculate the probabilities of each classes.
+            If the number of matches is less than half of Max Match, the probability for the given
+            class is 0. 
+            Otherwise, the probability is #matches / totalMatches. 
+            totalMatches equals to the total number of matches of all classes whose probability is greater than 0.</p>
           <img class="img" src="pset1/5015.png" width="100%">
           <img class="img" src="pset1/6140.png" width="100%">
-          <p>In both examples above, not only the class with 0 match, but also the class with number of matches less than
-            the max matches have probablity of 0.
-            For example, in the top image, the first class has 5 matches, the second has 0, and the third has 15. In this case, the max matches is 15, and both 5 and 0 are less than 7.5, which is the half of max matches. Therefore the class with 15 matches has probability of 1, and the other two classes have probability of 0.
+          <p>In both examples above, not only the classes with 0 match, but also classes with positive number of matches have probablity of 0.
+            For example, in the top image, the first class has 5 matches, the second has 0, and the third has 15. In this case, the Max Match is 15, and both 5 and 0 are less than 7.5, the half of Max Match. Therefore the class with 15 matches has probability of 1, and the other two have probability of 0. </p>
             <img class="img" src="pset1/modified_half_half.png" width="100%">
             <img class="img" src="pset1/035065.png" width="100%">
-            <p>In the above 2 examples, there are two classes that are being counted. For example in the bottom image, the max matches is 13 and the first class, whose number of matches is 7, also should be factored in, since its number of matches is greater than the half of max matches (6.5). Therefore the probabilities of the two qualifying classes are proportionally divided.</p>
+            <p>In the above two examples, there are two classes with positive probability in each scenario. 
+              For example in the bottom image, the Max Matches is 13. Thus, the first class, whose number of matches is 7, should also be factored in, as its number of matches is greater than the half of Max Match (6.5). Therefore the probabilities of the two qualifying classes are proportionally distributed.</p>
             <!-- </a> -->
             <h5 class="post-subtitle">
               Section 6 Limiting the number of training examples per class
@@ -132,10 +134,13 @@
             <p>Image above demonstrates the code modified for Section 6. As shown in the image, allocated number of samples are 10 for the first class, 100 for the second class, and 200 for the third class.
             </p>
             <img class="img" src="pset1/alert.png" width="100%">
-            <p>As shown in the image, an alert pops up when maximum number of samples are collected.</p>
+            <p>As shown in the image, an alert pops up when the maximum number of samples are collected.</p>
             <img class="img" src="pset1/capped.png" width="100%">
             <p>Image above verifies that only 10 samples are collected for the first class, and only 100 samples are collected for the second class as specified in the code.</p>
-            <p>We noticed that when there is a large discrepancy in number of maximum samples for each classes, confidence level for the classes are slightly affected as well. We suspect that this happens because number of top matches, which correlates with the probability and confidence level of the classes, significantly decreases if the number of total samples available decreases. </p>
+            <p>We noticed that when there is a large discrepancy in number of maximum samples for each classes, confidence level for the classes are slightly affected as well. 
+              We suspect that this is because number of top matches, which correlates with the probability and confidence level of the classes, significantly decreases if the number of total samples available decreases. 
+              I noticed that for classes with small sample size, adding more weight on matches can compensate the decreased confidence level.
+            </p>
             <h5 class="post-subtitle">
               Section 7 Further Explorations
             </h5>
