@@ -67,178 +67,104 @@
   <div class="container">
     <div class="row">
       <div class="col-lg-8 col-md-10 mx-auto">
-        <div class="post-preview">
-          <!-- <div> -->
-          <!-- <a href="post.html"> -->
-          <h2 class="post-title">
-            Assignment 0
-          </h2>
-          <h5 class="post-subtitle">
-            Section 4
-          </h5>
-          <img class="img" src="pset0/ps0sec4.png" width="100%">
-          <p>Changed width of the webcam to be '100%'.</p>
 
-          <h5 class="post-subtitle">
-            Section 5
-          </h5>
-          <a href="pset0/index.html">tinyCodeExample.html</a>
-          <!-- </a> -->
-          <!-- </div> -->
-          <p class="post-meta">Posted
-            <!-- <a href="#">Start Bootstrap</a> -->
-            on September 04, 2018
-          </p>
+        <div class="post-preview">
+          <a href="assignment1.html">
+            <h2 class="post-title"> Assignment 1 </h2>
+          </a>
+          <p class="post-meta"> Posted on September 10, 2018 </p>
         </div>
+
         <hr>
-        <div class="post-preview">
-          <!-- <div> -->
-          <!-- <a href="post.html"> -->
-          <h2 class="post-title">
-            Assignment 1
-          </h2>
-          <h5 class="post-subtitle">
-            Section 4 Examining the confidence levels
-          </h5>
-          <img class="img" src="pset1/0200.png" width="100%">
-          <p>As shown in the image above, the alert on the top of the page displays number of images matched and confidence
-            levels for each class.</p>
-          <p>Note that because my face (one on the left) is only slightly shown, my friend's face (the one on the right)
-            has confidence level of 1 because she has top 20 closest matches.</p>
 
-          <h5 class="post-subtitle">
-            Section 5 Scaling the confidence values
-          </h5>
-          <img class="img" src="pset1/code.png" width="100%">
-          <p>Shown above is the code modification made to WebcamClassifier.js</p>
-          <p>Unlike the original code, the modified code now first finds a class with the most matches (let's call this number
-            of matches "Max Match"). 
-            Then in the following iterations, we calculate the probabilities of each classes.
-            If the number of matches is less than half of Max Match, the probability for the given
-            class is 0. 
-            Otherwise, the probability is #matches / totalMatches. 
-            totalMatches equals to the total number of matches of all classes whose probability is greater than 0.</p>
-          <img class="img" src="pset1/5015.png" width="100%">
-          <img class="img" src="pset1/6140.png" width="100%">
-          <p>In both examples above, not only the classes with 0 match, but also classes with positive number of matches have probablity of 0.
-            For example, in the top image, the first class has 5 matches, the second has 0, and the third has 15. In this case, the Max Match is 15, and both 5 and 0 are less than 7.5, the half of Max Match. Therefore the class with 15 matches has probability of 1, and the other two have probability of 0. </p>
-            <img class="img" src="pset1/modified_half_half.png" width="100%">
-            <img class="img" src="pset1/035065.png" width="100%">
-            <p>In the above two examples, there are two classes with positive probability in each scenario. 
-              For example in the bottom image, the Max Matches is 13. Thus, the first class, whose number of matches is 7, should also be factored in, as its number of matches is greater than the half of Max Match (6.5). Therefore the probabilities of the two qualifying classes are proportionally distributed.</p>
-            <!-- </a> -->
-            <h5 class="post-subtitle">
-              Section 6 Limiting the number of training examples per class
-            </h5>
-            <img class="img" src="pset1/animate.png" width="100%">
-            <p>Image above demonstrates the code modified for Section 6. As shown in the image, allocated number of samples are 10 for the first class, 100 for the second class, and 200 for the third class.
-            </p>
-            <img class="img" src="pset1/alert.png" width="100%">
-            <p>As shown in the image, an alert pops up when the maximum number of samples are collected.</p>
-            <img class="img" src="pset1/capped.png" width="100%">
-            <p>Image above verifies that only 10 samples are collected for the first class, and only 100 samples are collected for the second class as specified in the code.</p>
-            <p>We noticed that when there is a large discrepancy in number of maximum samples for each classes, confidence level for the classes are slightly affected as well. 
-              We suspect that this is because number of top matches, which correlates with the probability and confidence level of the classes, significantly decreases if the number of total samples available decreases. 
-              I noticed that for classes with small sample size, adding more weight on matches can compensate the decreased confidence level.
-            </p>
-            <h5 class="post-subtitle">
-              Section 7 Further Explorations
-            </h5>
-            <p>For this section, we decreased the number of classes from 3 to 2. The image below shows the code modification for the change.</p>
-            <img class="img" src="pset1/count.png" width="100%">
-            <p>With such change, now the confidence level of each classes are modified. In the popup alert, the confidence levels are calculated for only the first two classes as shown below.</p>
-            <img class="img" src="pset1/classdeleted2.png" width="100%">
-            <!-- </div> -->
-            <p class="post-meta">Posted
-              <!-- <a href="#">Start Bootstrap</a> -->
-              on September 10, 2018
-            </p>
+        <div class="post-preview">
+          <a href="final.html">
+            <h2 class="post-title"> Final Project: Guesture Keyboard </h2>
+          </a>
+          <p class="post-meta"> Posted on September 10, 2018 </p>
         </div>
-        <!-- <div class="post-preview">
-            <a href="post.html">
-              <h2 class="post-title">
-                I believe every human has a finite number of heartbeats. I don't intend to waste any of mine.
-              </h2>
-            </a>
-            <p class="post-meta">Posted by
-              <a href="#">Start Bootstrap</a>
-              on September 18, 2018</p>
-          </div>
-          <hr>
-          <div class="post-preview">
-            <a href="post.html">
-              <h2 class="post-title">
-                Science has not yet mastered prophecy
-              </h2>
-              <h3 class="post-subtitle">
-                We predict too much for the next year and yet far too little for the next ten.
-              </h3>
-            </a>
-            <p class="post-meta">Posted by
-              <a href="#">Start Bootstrap</a>
-              on August 24, 2018</p>
-          </div>
-          <hr>
-          <div class="post-preview">
-            <a href="post.html">
-              <h2 class="post-title">
-                Failure is not an option
-              </h2>
-              <h3 class="post-subtitle">
-                Many say exploration is part of our destiny, but it’s actually our duty to future generations.
-              </h3>
-            </a>
-            <p class="post-meta">Posted by
-              <a href="#">Start Bootstrap</a>
-              on July 8, 2018</p>
-          </div>
-          <hr> -->
+
+        <hr>
+
+        <div class="post-preview">
+          <a href="assignment0.html">
+            <h2 class="post-title"> Assignment 0 </h2>
+            <!-- <h5 class="post-subtitle"> Section 4 </h5> -->
+            <!-- <img class="img" src="pset0/ps0sec4.png" width="100%"> -->
+            <!-- <p>Changed width of the webcam to be '100%'.</p> -->
+            <!-- <h5 class="post-subtitle"> Section 5 </h5> -->
+            <!-- <a href="pset0/index.html">tinyCodeExample.html</a> -->
+          </a>
+          <p class="post-meta"> Posted on September 04, 2018 </p>
+        </div>
+
+        <hr>
+
+        <div class="post-preview">
+          <a href="assignment1.html">
+            <h2 class="post-title"> Assignment 1 </h2>
+          </a>
+          <p class="post-meta"> Posted on September 10, 2018 </p>
+        </div>
+
+        <hr>
+
+        <div class="post-preview">
+          <a href="assignment2.html">
+            <h2 class="post-title"> Assignment 2 </h2>
+          </a>
+          <p class="post-meta"> Posted on September 17, 2018 </p>
+        </div>
+
+        <hr>
+
+        <div class="post-preview">
+          <a href="assignment3.html">
+            <h2 class="post-title"> Assignment 3 </h2>
+          </a>
+          <p class="post-meta"> Posted on September 24, 2018 </p>
+        </div>
+
+        <hr>
+
         <!-- Pager -->
         <!-- <div class="clearfix">
-            <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
-          </div> -->
+          <a class="btn btn-primary float-right" href="#">Older Posts &rarr;</a>
+        </div> -->
       </div>
     </div>
   </div>
 
-  <!-- <hr> -->
 
   <!-- Footer -->
   <footer>
     <div class="container">
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
-          <!-- <ul class="list-inline text-center">
-              <li class="list-inline-item">
-                <a href="#">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">
-                  <span class="fa-stack fa-lg">
-                    <i class="fa fa-circle fa-stack-2x"></i>
-                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                  </span>
-                </a>
-              </li>
-            </ul> -->
-          <p class="copyright text-muted">Copyright &copy; Ashley Jieun Lee 2018</p>
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/ashley-jieun-lee/">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/ajlee19">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Ashley JiEun Lee</p>
         </div>
       </div>
     </div>
   </footer>
+
 
   <!-- Bootstrap core JavaScript -->
   <script src="vendor/jquery/jquery.min.js"></script>

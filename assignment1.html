@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>Ashley Lee</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom fonts for this template -->
+    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+        rel='stylesheet' type='text/css'>
+
+    <!-- Custom styles for this template -->
+    <link href="css/clean-blog.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+        <div class="container">
+            <a class="navbar-brand" href="about.html">Ashley Lee</a>
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+                aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                Menu
+                <i class="fa fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="s198.html">6.S198</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('img/post-bg.jpg')">
+        <div class="overlay"></div>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <div class="post-heading">
+                        <h1>Assignment 1</h1>
+                        <h2 class="subheading">Teachable Machines</h2>
+                        <span class="meta">Posted on September 10, 2018</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Post Content -->
+    <article>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+
+                    <h2 class="post-subtitle"> Section 4 Examining the confidence levels </h2>
+                    <img class="img" src="pset1/0200.png" width="100%">
+                    <p>As shown in the image above, the alert on the top of the page displays number of images matched and
+                        confidence levels for each class.</p>
+                    <p>Note that because my face (one on the left) is only slightly shown, my friend's face (the one on the
+                        right) has confidence level of 1 because she has top 20 closest matches.</p>
+
+                    <h2 class="post-subtitle"> Section 5 Scaling the confidence values</h2>
+                    <img class="img" src="pset1/code.png" width="100%">
+                    <p>Shown above is the code modification made to WebcamClassifier.js</p>
+                    <p>Unlike the original code, the modified code now first finds a class with the most matches (let's call
+                        this number of matches "Max Match"). Then in the following iterations, we calculate the probabilities
+                        of each classes. If the number of matches is less than half of Max Match, the probability for the
+                        given class is 0. Otherwise, the probability is #matches / totalMatches. totalMatches equals to the
+                        total number of matches of all classes whose probability is greater than 0.</p>
+                    <img class="img" src="pset1/5015.png" width="100%">
+                    <img class="img" src="pset1/6140.png" width="100%">
+                    <p>In both examples above, not only the classes with 0 match, but also classes with positive number of
+                        matches have probablity of 0. For example, in the top image, the first class has 5 matches, the second
+                        has 0, and the third has 15. In this case, the Max Match is 15, and both 5 and 0 are less than 7.5,
+                        the half of Max Match. Therefore the class with 15 matches has probability of 1, and the other two
+                        have probability of 0. </p>
+                    <img class="img" src="pset1/modified_half_half.png" width="100%">
+                    <img class="img" src="pset1/035065.png" width="100%">
+                    <p>In the above two examples, there are two classes with positive probability in each scenario. For example
+                        in the bottom image, the Max Matches is 13. Thus, the first class, whose number of matches is 7,
+                        should also be factored in, as its number of matches is greater than the half of Max Match (6.5).
+                        Therefore the probabilities of the two qualifying classes are proportionally distributed.</p>
+
+                    <h2 class="post-subtitle"> Section 6 Limiting the number of training examples per class </h2>
+                    <img class="img" src="pset1/animate.png" width="100%">
+                    <p>Image above demonstrates the code modified for Section 6. As shown in the image, allocated number
+                        of samples are 10 for the first class, 100 for the second class, and 200 for the third class.
+                    </p>
+                    <img class="img" src="pset1/alert.png" width="100%">
+                    <p>As shown in the image, an alert pops up when the maximum number of samples are collected.</p>
+                    <img class="img" src="pset1/capped.png" width="100%">
+                    <p>Image above verifies that only 10 samples are collected for the first class, and only 100 samples
+                        are collected for the second class as specified in the code.</p>
+                    <p>We noticed that when there is a large discrepancy in number of maximum samples for each classes, confidence
+                        level for the classes are slightly affected as well. We suspect that this is because number of top
+                        matches, which correlates with the probability and confidence level of the classes, significantly
+                        decreases if the number of total samples available decreases. I noticed that for classes with small
+                        sample size, adding more weight on matches can compensate the decreased confidence level.
+                    </p>
+
+                    <h2 class="post-subtitle"> Section 7 Further Explorations </h2>
+                    <p>For this section, we decreased the number of classes from 3 to 2. The image below shows the code modification
+                        for the change.</p>
+                    <img class="img" src="pset1/count.png" width="100%">
+                    <p>With such change, now the confidence level of each classes are modified. In the popup alert, the confidence
+                        levels are calculated for only the first two classes as shown below.</p>
+                    <img class="img" src="pset1/classdeleted2.png" width="100%">
+
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <hr>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <ul class="list-inline text-center">
+                        <li class="list-inline-item">
+                            <a href="https://www.linkedin.com/in/ashley-jieun-lee/">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-linkedin fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        <li class="list-inline-item">
+                            <a href="https://github.com/ajlee19">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Ashley JiEun Lee</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Custom scripts for this template -->
+    <script src="js/clean-blog.min.js"></script>
+
+</body>
+
+</html>
